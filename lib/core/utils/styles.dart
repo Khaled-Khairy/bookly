@@ -18,8 +18,12 @@ abstract class Styles {
     fontSize: 18,
   );
   static const textStyle20 = TextStyle(
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w700,
     fontSize: 20,
+  );
+  static const textStyle24 = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 24,
   );
   static const priceStyle = TextStyle(
     fontWeight: FontWeight.w700,

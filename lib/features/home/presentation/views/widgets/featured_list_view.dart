@@ -1,4 +1,3 @@
-import 'package:booklyzag/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_book_image.dart';
