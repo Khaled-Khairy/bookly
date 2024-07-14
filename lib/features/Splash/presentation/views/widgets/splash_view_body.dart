@@ -1,4 +1,5 @@
 import 'package:booklyzag/core/utils/app_router.dart';
+import 'package:booklyzag/core/utils/functions/init_sliding_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,7 +20,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    initSlidingAnimation();
+    initSlidingAnimation(
+        vsync: this,
+        setController: (controller) {
+          animationController = controller;
+        },
+        setAnimation: (animation) {
+          slidingAnimation = animation;
+        }, beginOffset: const Offset(0, 2));
     Future.delayed(const Duration(seconds: 2), () {
       GoRouter.of(context).push(AppRouter.kHomeView);
     });
@@ -46,15 +54,5 @@ class _SplashViewBodyState extends State<SplashViewBody>
             ))
       ],
     );
-  }
-
-  void initSlidingAnimation() {
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
   }
 }
