@@ -17,13 +17,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 4));
-
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 7), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
+    initSlidingAnimation();
   }
 
   @override
@@ -34,14 +28,22 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logo),
         SlideTransition(
-          position: slidingAnimation,
-          child: const Text(
-            'Read Free Books',
-            style: TextStyle(color: Colors.white),
-            textAlign: TextAlign.center,
-          ),
-        )
+            position: slidingAnimation,
+            child: const Text(
+              "Read Free Books",
+              textAlign: TextAlign.center,
+            ))
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
   }
 }
