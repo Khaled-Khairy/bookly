@@ -9,39 +9,33 @@ class Rating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.6,
-      child: const Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            "\$19.99",
-            style: Styles.textStyle20,
-          ),
-          Row(
-            children: [
-              Icon(
-                Icons.star,
-                color: Colors.yellow,
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Text(
-                "4.8",
-                style: Styles.textStyle16,
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Text(
-                "(2548)",
-                style: Styles.textStyle14,
-              )
-            ],
-          )
-        ],
-      ),
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          "\$19.99",
+          style: Styles.textStyle20,
+        ),
+        Spacer(),
+        Icon(
+          Icons.star,
+          color: Colors.yellow,
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Text(
+          "4.8",
+          style: Styles.textStyle16,
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Text(
+          "(2548)",
+          style: Styles.ratingCountStyle,
+        )
+      ],
     );
   }
 }

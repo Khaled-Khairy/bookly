@@ -14,30 +14,30 @@ class BestSellerItem extends StatelessWidget {
         children: [
           const SizedBox(height: 160, child: CustomBookImage()),
           const SizedBox(width: 5,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.6,
-                child: const Text(
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.6,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
                   "Harry Potter and the Goblet of Fire",
                   style: Styles.textStyle20,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
-              ),
-              const SizedBox(
-                height: 2,
-              ),
-              const Text(
-                "J.K. Rowling",
-                style: Styles.textStyle14,
-              ),
-              const SizedBox(
-                height: 2,
-              ),
-              const Rating()
-            ],
+                SizedBox(
+                  height: 2,
+                ),
+                Text(
+                  "J.K. Rowling",
+                  style: Styles.textStyle14,
+                ),
+                SizedBox(
+                  height: 2,
+                ),
+                Rating()
+              ],
+            ),
           )
         ],
       ),
